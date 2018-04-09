@@ -22,12 +22,17 @@ Check the operation list below.
 * [INPUT](#input-parameter)
 * [INPUTMANY](#inputmany-parameters)
 
-### EXECUTES
+### EXECUTES < v.4
 
 * [EXECUTE](#execute-procedurename-callback)
 * [EXECUTEONE](#executeone-procedurename-callback)
 * [ASYNC_EXECUTE](#async-execute-procedurename)
 * [ASYNC_EXECUTEONE](#async-executeone-procedurename)
+
+### EXECUTES >= v.4
+
+* [ASYNC_EXEC](#async_exec-procedurename-transaction?)
+* [ASYNC_EXEC_ONE](#async_exec_one-procedurename-transaction?)
 
 ---------------------------------------
 
@@ -121,7 +126,7 @@ pg.request()
 ### EXECUTE (procedureName, callback)
 *Return list results* 
 ```javascript
-pg.request()
+return pg.request()
     .execute('procedureName', (err, data) => {
         if (err)
             return console.log(err);
@@ -133,7 +138,7 @@ pg.request()
 ### EXECUTEONE (procedureName, callback)
 *Return single result* 
 ```javascript
-pg.request()
+return pg.request()
     .executeOne('procedureName', (err, data) => {
         if (err)
             return console.log(err);
@@ -145,17 +150,32 @@ pg.request()
 ### ASYNC_EXECUTE (procedureName)
 *Return list results* 
 ```javascript
-
 return pg.request()
     .asyncExecute('procedureName');
-
 ``` 
 
 ### ASYNC_EXECUTEONE (procedureName)
 *Return single result* 
 ```javascript
-
 return pg.request()
     .asyncExecuteOne('procedureName');
+``` 
+
+
+## EXECUTES  * v.4 OR GREATER *
+
+### ASYNC_EXEC(procedureName, transacion?)
+```javascript
+
+return pg.request()
+    .asyncExec('procedureName', transaction?);
+
+``` 
+
+### ASYNC_EXEC_ONE(procedureName, transacion?)
+```javascript
+
+return pg.request()
+    .asyncExecOne('procedureName', transaction?);
 
 ``` 
