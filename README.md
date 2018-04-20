@@ -46,10 +46,11 @@ let config = {
     host: 'host',
     port: 5432,
     max: 10,
-    idleTimeoutMillis: 30000
+    idleTimeoutMillis: 30000,
+    schema?: 'schema default'
 };;
 
-require('smn-pg')(config);
+require('smn-pg')(config, { schema: 'Schema default' });
 // SINGLE INSTANCE
 
 ```
