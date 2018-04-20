@@ -1,6 +1,6 @@
 {
   "name": "smn-pg",
-  "version": "4.1.3",
+  "version": "4.2.0",
   "description": "Encapsulated functions execute procedures for postgres (pg-promise) Sync/Async.",
   "main": "./lib/index.js",
   "scripts": {},
